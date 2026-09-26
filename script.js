@@ -4,3 +4,19 @@ const renderChecklist=()=>{const k=document.getElementById("doc-service").value;
 function demoSave(type,data,msg){const key="caDesk_"+type;const old=JSON.parse(localStorage.getItem(key)||"[]");old.unshift({...data,createdAt:new Date().toISOString(),status:"New"});localStorage.setItem(key,JSON.stringify(old));msg.textContent="Received — this demo lead is now visible in the Admin Portal.";setTimeout(()=>msg.textContent="",4500)}
 document.getElementById("lead-form").addEventListener("submit",e=>{e.preventDefault();const f=new FormData(e.target),data=Object.fromEntries(f.entries());demoSave("leads",data,document.getElementById("lead-msg"));e.target.reset()});
 document.getElementById("question-form").addEventListener("submit",e=>{e.preventDefault();const f=new FormData(e.target),data=Object.fromEntries(f.entries());demoSave("questions",data,document.getElementById("question-msg"));e.target.reset()});
+
+const menuBtn=document.querySelector(".menu");
+if(menuBtn){const mobileNav=document.createElement("div");mobileNav.className="mobile-nav";mobileNav.innerHTML='<a href="#solutions">Solutions</a><a href="#services">Services</a><a href="#documents">Documents</a><a href="#contact">Contact</a><a href="admin.html">Admin Portal ↗</a>';document.querySelector(".nav").appendChild(mobileNav);menuBtn.addEventListener("click",()=>mobileNav.classList.toggle("open"));mobileNav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mobileNav.classList.remove("open")));}
+
+const aiFab=document.getElementById("ai-fab"),aiPanel=document.getElementById("ai-panel"),aiClose=document.getElementById("ai-close"),aiMessages=document.getElementById("ai-messages"),aiForm=document.getElementById("ai-form"),aiText=document.getElementById("ai-text");
+function aiAdd(text,type){const d=document.createElement("div");d.className="ai-msg "+type;d.textContent=text;aiMessages.appendChild(d);aiMessages.scrollTop=aiMessages.scrollHeight}
+function aiAnswer(q){const x=q.toLowerCase();if(x.includes("gst"))return "For GST, the CA may help with registration, returns, reconciliation and notices. If you tell me your business type and turnover situation, I can point you to the relevant service. For an actual filing or notice, speak with the CA.";
+if(x.includes("notice"))return "Don't ignore a tax or GST notice. Keep the notice PDF, relevant return/ITR and supporting records ready. Use the consultation form so the CA can review the actual notice.";
+if(x.includes("itr")||x.includes("income tax")||x.includes("return"))return "For an ITR, keep PAN, Aadhaar, Form 16 or business income records, bank statements and deduction/investment proofs ready. The correct ITR depends on your income and circumstances.";
+if(x.includes("business")||x.includes("company")||x.includes("startup"))return "For a new business, the CA can help map constitution, registrations, GST/TDS and ongoing compliance. Tell us whether it is a proprietorship, partnership, LLP or company.";
+if(x.includes("account")||x.includes("book"))return "Accounting support can cover bookkeeping, ledgers, bank records, MIS and audit preparation. The firm can tailor this through the consultation form.";
+return "I can help route you to GST, Income Tax, notices, business setup or accounting. Try one of the quick options, or send your question to the CA desk."; }
+document.querySelectorAll("[data-ai]").forEach(b=>b.addEventListener("click",()=>{aiAdd(b.dataset.ai,"user");setTimeout(()=>aiAdd(aiAnswer(b.dataset.ai),"bot"),250)}));
+aiFab?.addEventListener("click",()=>{aiPanel.classList.toggle("open");aiPanel.setAttribute("aria-hidden",String(!aiPanel.classList.contains("open")));});
+aiClose?.addEventListener("click",()=>aiPanel.classList.remove("open"));
+aiForm?.addEventListener("submit",e=>{e.preventDefault();const q=aiText.value.trim();if(!q)return;aiAdd(q,"user");aiText.value="";setTimeout(()=>aiAdd(aiAnswer(q),"bot"),300)});

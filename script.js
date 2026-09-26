@@ -363,3 +363,22 @@ document.getElementById("upload-send")?.addEventListener("click",()=>{
       render();
     });
 })();
+
+/* ===== Theme selector ===== */
+(function(){
+  const root=document.body, trigger=document.getElementById("theme-trigger"), menu=document.getElementById("theme-menu");
+  const options=[...document.querySelectorAll("[data-theme-choice]")];
+  if(!trigger||!menu)return;
+  const names={editorial:"Editorial Luxe",modern:"Modern Tech",corporate:"Corporate Blue",mono:"Minimal Mono",bold:"Bold Finance"};
+  const saved=localStorage.getItem("caDesk_theme")||"editorial";
+  function applyTheme(theme){
+    const safe=names[theme]?theme:"editorial";
+    root.dataset.theme=safe;
+    options.forEach(o=>o.classList.toggle("active",o.dataset.themeChoice===safe));
+    localStorage.setItem("caDesk_theme",safe);
+  }
+  applyTheme(saved);
+  trigger.addEventListener("click",e=>{e.stopPropagation();const open=menu.classList.toggle("open");trigger.setAttribute("aria-expanded",String(open));menu.setAttribute("aria-hidden",String(!open));});
+  options.forEach(o=>o.addEventListener("click",()=>{applyTheme(o.dataset.themeChoice);menu.classList.remove("open");trigger.setAttribute("aria-expanded","false");menu.setAttribute("aria-hidden","true");}));
+  document.addEventListener("click",e=>{if(!e.target.closest("#theme-switcher")){menu.classList.remove("open");trigger.setAttribute("aria-expanded","false");menu.setAttribute("aria-hidden","true");}});
+})();

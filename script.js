@@ -299,4 +299,30 @@ const hsnData=[
 {keys:["kulfi","ice cream","kulfi"],code:"2105",desc:"Kulfi",rate:"18%"},{keys:["maize seeds","corn seeds"],code:"1005",desc:"Maize of seed quality",rate:"Nil"},{keys:["water purifier","water filter","filter"],code:"8421",desc:"Filters or water purifiers",rate:"18%"},{keys:["lac bangles","shellac bangles","bangles"],code:"7117",desc:"Lac or shellac bangles",rate:"3%"},{keys:["idli dosa batter","dosa batter","idli batter"],code:"2106",desc:"Idli/Dosa batter (food mixes)",rate:"18%"},{keys:["nail polish"],code:"3304",desc:"Nail polish",rate:"28%"},{keys:["wet dates","dates"],code:"0804",desc:"Wet dates",rate:"12%"},{keys:["pet food","dog food","cat food"],code:"2309",desc:"Dog or cat food",rate:"18%"},{keys:["khari","hard butter"],code:"1905",desc:"Khari and hard butters",rate:"18%"},{keys:["khoya","mawa"],code:"0402",desc:"Khoya/Mawa (concentrated milk)",rate:"5%"},{keys:["tamarind fresh"],code:"0810",desc:"Fresh tamarind",rate:"Nil"},{keys:["tamarind dry","dry tamarind"],code:"0813",desc:"Dry tamarind",rate:"12%"},{keys:["hair rubber band","rubber band"],code:"4016",desc:"Hair rubber bands",rate:"28%"},{keys:["carton corrugated","corrugated carton"],code:"4819",desc:"Corrugated paper/paperboard cartons",rate:"12%"}];
 function findHSN(){const q=document.getElementById("hsn-query").value.trim().toLowerCase();const box=document.getElementById("hsn-result");if(!q){box.innerHTML="Enter a product name or HSN heading.";return}const clean=q.replace(/\\s/g,"");let hits=hsnData.filter(x=>x.keys.some(k=>q.includes(k)||k.includes(q)));if(/^\\d{4,8}$/.test(clean))hits=hsnData.filter(x=>x.code===clean||clean.startsWith(x.code)||x.code.startsWith(clean));if(!hits.length){box.innerHTML="<strong>No built-in match.</strong><br>Use the official CBIC/GST HSN search for the exact product description and classification." ;return}box.innerHTML=hits.slice(0,4).map(x=>'<div style="margin-bottom:10px"><strong>HSN '+x.code+'</strong> — '+x.desc+'<br><span class="rate">'+x.rate+' GST</span></div>').join("")}
 document.getElementById("hsn-search")?.addEventListener("click",findHSN);document.getElementById("hsn-query")?.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();findHSN()}});
-let selectedDocs=[];const fileInput=document.getElementById("document-files"),uploadList=document.getElementById("upload-list"),uploadMsg=document.getElementById("upload-msg");function renderUploads(){uploadList.innerHTML=selectedDocs.map((f,i)=>'<div class="upload-item"><span>'+f.name+' · '+Math.round(f.size/1024)+' KB</span><button type="button" data-remove="'+i+'">×</button></div>').join("");uploadList.querySelectorAll("[data-remove]").forEach(b=>b.addEventListener("click",()=>{selectedDocs.splice(Number(b.dataset.remove),1);renderUploads()}))}fileInput?.addEventListener("change",e=>{const incoming=[...e.target.files].filter(f=>f.size<=10*1024*1024);const totalSelected=e.target.files.length;selectedDocs=[...selectedDocs,...incoming];renderUploads();e.target.value="";if(incoming.length<totalSelected)uploadMsg.textContent="Some files were skipped because they exceed 10 MB.";});document.getElementById("upload-send")?.addEventListener("click",()=>{if(!selectedDocs.length){uploadMsg.textContent="Choose at least one document first.";return}const meta=selectedDocs.map(f=>({name:f.name,size:f.size,type:f.type,createdAt:new Date().toISOString()}));localStorage.setItem("caDesk_documentUploads",JSON.stringify(meta));uploadMsg.textContent=meta.length+" document(s) added to this browser session. Connect Firebase Storage for real CA-side uploads.";});
+let selectedDocs=[];
+const fileInput=document.getElementById("document-files"),uploadList=document.getElementById("upload-list"),uploadMsg=document.getElementById("upload-msg");
+function renderUploads(){uploadList.innerHTML=selectedDocs.map((f,i)=>'<div class="upload-item"><span>'+f.name+' · '+Math.round(f.size/1024)+' KB</span><button type="button" data-remove="'+i+'">×</button></div>').join("");uploadList.querySelectorAll("[data-remove]").forEach(b=>b.addEventListener("click",()=>{selectedDocs.splice(Number(b.dataset.remove),1);renderUploads()}))}
+fileInput?.addEventListener("change",e=>{const incoming=[...e.target.files].filter(f=>f.size<=10*1024*1024);const skipped=e.target.files.length-incoming.length;selectedDocs=[...selectedDocs,...incoming];renderUploads();e.target.value="";uploadMsg.textContent=skipped?"Some files were skipped because they exceed 10 MB.":""});
+document.getElementById("upload-send")?.addEventListener("click",()=>{
+  const name=document.getElementById("upload-name")?.value.trim();
+  const phone=document.getElementById("upload-phone")?.value.trim();
+  const email=document.getElementById("upload-email")?.value.trim();
+  const service=document.getElementById("upload-service")?.value;
+  const purpose=document.getElementById("upload-purpose")?.value.trim();
+  if(!name||!phone||!email||!service||!purpose){uploadMsg.textContent="Please complete Name, Mobile, Email, Service and Purpose before submitting documents.";return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){uploadMsg.textContent="Please enter a valid email address.";return}
+  if(phone.replace(/\D/g,"").length<10){uploadMsg.textContent="Please enter a valid mobile number.";return}
+  if(!selectedDocs.length){uploadMsg.textContent="Choose at least one document first.";return}
+  const submissionId="DOC-"+Date.now().toString(36).toUpperCase();
+  const record={submissionId,name,phone,email,service,purpose,documents:selectedDocs.map(f=>({name:f.name,size:f.size,type:f.type})),createdAt:new Date().toISOString(),status:"New"};
+  const oldUploads=JSON.parse(localStorage.getItem("caDesk_documentUploads")||"[]");
+  oldUploads.unshift(record);
+  localStorage.setItem("caDesk_documentUploads",JSON.stringify(oldUploads));
+  uploadMsg.textContent="Documents submitted successfully. Reference: "+submissionId;
+  selectedDocs=[];renderUploads();
+  document.getElementById("upload-name").value="";
+  document.getElementById("upload-phone").value="";
+  document.getElementById("upload-email").value="";
+  document.getElementById("upload-service").value="";
+  document.getElementById("upload-purpose").value="";
+});

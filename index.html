@@ -1,83 +1,55 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Sandip Dasgupta & Co. — Chartered Accountants. Audit, Income Tax, GST, Accounting and Financial Advisory services.">
-<title>Sandip Dasgupta & Co. | Chartered Accountants</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CA Desk — Smart Tax & Compliance</title>
+<meta name="description" content="A modern CA practice experience: find the right tax solution, prepare documents and connect with a Chartered Accountant.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="site-header">
-  <a class="brand" href="#home">
-    <img class="ca-logo-img" src="https://resource.cdn.icai.org/77835prc62484.png" alt="CA India logo">
-    <span class="brand-text"><strong>Sandip Dasgupta &amp; Co.</strong><small>Chartered Accountants</small></span>
-  </a>
-  <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  <nav class="nav"><a href="#about">About</a><a href="#services">Services</a><a href="#practice">Practice Areas</a><a href="#contact">Contact</a><a class="nav-cta" href="#contact">Contact Us <span>↗</span></a></nav>
-</header>
+<header class="nav"><a class="brand" href="#"><span class="brandmark">CA</span><span>CA <b>Desk</b><small>Chartered Accountants</small></span></a><nav><a href="#solutions">Solutions</a><a href="#services">Services</a><a href="#documents">Documents</a><a href="#contact">Contact</a></nav><a class="admin-link" href="admin.html">Admin ↗</a><button class="menu" aria-label="Menu">☰</button></header>
 
-<main id="home">
+<main>
 <section class="hero">
-  <div class="hero-copy">
-    <p class="eyebrow"><span></span> Chartered Accountants</p>
-    <h1>Accounting. Taxation.<br><em>Professional advice.</em></h1>
-    <p class="hero-lead">Sandip Dasgupta &amp; Co. provides professional services in audit, taxation, GST, accounting and financial matters for businesses, professionals and individuals.</p>
-    <div class="hero-actions"><a class="button button-dark" href="#contact">Make an enquiry <span>→</span></a><a class="text-link" href="#services">View services <span>↓</span></a></div>
-  </div>
-  <div class="hero-visual" aria-label="Professional finance illustration">
-    <div class="visual-top"><span>CA INDIA</span><span>01</span></div>
-    <div class="ledger">
-      <div class="ledger-head"><span>FINANCIAL OVERVIEW</span><b>FY</b></div>
-      <div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-      <div class="ledger-line"></div>
-      <div class="ledger-values"><span>Income Tax</span><b>GST</b><span>Audit</span><b>Finance</b></div>
-    </div>
-    <div class="floating-tax">₹ <span>Tax</span></div>
-    <div class="floating-gst">GST</div>
-    <div class="floating-audit">✓ <span>Audit</span></div>
-  </div>
+<div class="hero-copy"><div class="eyebrow">SMARTER TAX • CLEARER DECISIONS</div><h1>Don't search for a CA.<br><em>Find the right solution.</em></h1><p>Tell us what you're dealing with. CA Desk guides you to the relevant service, documents and next step — without the usual confusion.</p>
+<div class="hero-actions"><a class="btn primary" href="#solutions">Find My Solution <span>→</span></a><a class="btn ghost" href="#contact">Talk to a CA</a></div>
+<div class="trust"><span>✓ Confidential</span><span>✓ Professional</span><span>✓ Human support</span></div></div>
+<div class="hero-visual"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85" alt="Professionals discussing business and finance"><div class="float-card"><span class="pulse"></span><div><b>CA support available</b><small>Response during business hours</small></div></div><div class="stat-card"><strong>10+</strong><span>Years of<br>experience</span></div></div>
 </section>
 
-<section class="intro section" id="about">
-  <div class="section-label">01 — The firm</div>
-  <div class="intro-grid">
-    <div><h2>Professional services for <em>financial and regulatory matters.</em></h2></div>
-    <div class="intro-copy"><p>Sandip Dasgupta &amp; Co. is a Chartered Accountancy practice providing professional support across accounting, audit, taxation, GST and related financial matters.</p><p>Our focus is straightforward: accurate work, clear communication and professional attention to each engagement.</p></div>
-  </div>
-</section>
+<section class="problem" id="solutions"><div class="section-head"><span class="eyebrow">01 / FIND YOUR ROUTE</span><h2>What brings you here today?</h2><p>Choose the situation closest to yours. We'll take you to a practical next step.</p></div>
+<div class="choice-grid">
+<button class="choice" data-route="tax"><span>₹</span><b>I have a tax problem</b><small>ITR, notice, TDS or tax planning</small><i>→</i></button>
+<button class="choice" data-route="gst"><span>GST</span><b>I need GST help</b><small>Registration, returns or notice</small><i>→</i></button>
+<button class="choice" data-route="business"><span>↗</span><b>I'm starting a business</b><small>Setup, registrations and compliance</small><i>→</i></button>
+<button class="choice" data-route="accounts"><span>▤</span><b>My accounts need help</b><small>Bookkeeping, MIS and audit</small><i>→</i></button>
+</div>
+<div id="route-result" class="route-result hidden"></div></section>
 
-<section class="services section" id="services">
-  <div class="section-label">02 — Services</div>
-  <div class="section-heading"><h2>Areas of <em>practice.</em></h2><p>Professional assistance across core accounting, tax and assurance requirements.</p></div>
-  <div class="service-grid">
-    <article class="service"><span class="service-no">01</span><div class="service-art tax-art"><span>₹</span><i>%</i></div><h3>Income Tax</h3><p>Income-tax return compliance, tax-related assistance and representation support, as applicable.</p></article>
-    <article class="service"><span class="service-no">02</span><div class="service-art gst-art"><b>GST</b><span>↗</span></div><h3>GST</h3><p>GST registration, returns, compliance, reconciliations and related advisory support.</p></article>
-    <article class="service"><span class="service-no">03</span><div class="service-art audit-art"><span>✓</span><i>01&nbsp;&nbsp;02&nbsp;&nbsp;03</i></div><h3>Audit &amp; Assurance</h3><p>Audit and assurance work performed with professional care and attention to documentation.</p></article>
-    <article class="service"><span class="service-no">04</span><div class="service-art finance-art"><span>₹</span><i>₹ ₹ ₹</i></div><h3>Accounting &amp; Reporting</h3><p>Accounting records, financial reporting and related support based on the engagement requirements.</p></article>
-    <article class="service"><span class="service-no">05</span><div class="service-art advisory-art"><span>⌁</span><i>FINANCE</i></div><h3>Financial Advisory</h3><p>Practical financial analysis and professional advice for business and financial matters.</p></article>
-    <article class="service"><span class="service-no">06</span><div class="service-art compliance-art"><span>✓</span><i>COMPLIANCE</i></div><h3>Corporate Compliance</h3><p>Professional support for applicable statutory and regulatory compliance requirements.</p></article>
-  </div>
-</section>
+<section class="feature-band"><div><span class="eyebrow">THE DIFFERENCE</span><h2>From “What do I do?”<br>to “Here is my next step.”</h2></div><div class="feature-list"><div><b>01</b><span><strong>Problem finder</strong>Explain your situation in plain language.</span></div><div><b>02</b><span><strong>Document checklist</strong>Know what to prepare before you contact us.</span></div><div><b>03</b><span><strong>Human follow-up</strong>Your request lands directly in the CA's lead desk.</span></div></div></section>
 
-<section class="practice section" id="practice">
-  <div class="section-label">03 — Professional practice</div>
-  <div class="practice-grid">
-    <div class="practice-card"><span class="big-number">01</span><h3>Audit</h3><p>Structured assurance work supported by proper records, review and professional standards.</p><div class="mini-chart"><i></i><i></i><i></i><i></i><i></i></div></div>
-    <div class="practice-card"><span class="big-number">02</span><h3>Tax &amp; GST</h3><p>Tax and indirect-tax compliance handled with attention to applicable provisions and filing requirements.</p><div class="document"><span>ITR</span><span>GST</span><span>TDS</span></div></div>
-    <div class="practice-card"><span class="big-number">03</span><h3>Finance</h3><p>Financial information presented clearly to support informed business and management decisions.</p><div class="ring"><b>₹</b></div></div>
-  </div>
-</section>
+<section id="services" class="services"><div class="section-head"><span class="eyebrow">02 / SERVICES</span><h2>Professional work, made simple.</h2></div><div class="service-grid">
+<article><span>01</span><h3>Income Tax</h3><p>ITR filing, tax planning, notices and assessments.</p><a href="#contact">Get help →</a></article>
+<article><span>02</span><h3>GST</h3><p>Registration, returns, reconciliations and notices.</p><a href="#contact">Get help →</a></article>
+<article><span>03</span><h3>Audit & Assurance</h3><p>Statutory, internal and tax audit support.</p><a href="#contact">Get help →</a></article>
+<article><span>04</span><h3>Business Compliance</h3><p>Company, LLP, TDS and ongoing compliance.</p><a href="#contact">Get help →</a></article>
+<article><span>05</span><h3>Accounting</h3><p>Bookkeeping, MIS reporting and financial support.</p><a href="#contact">Get help →</a></article>
+<article><span>06</span><h3>Business Advisory</h3><p>Practical financial and compliance decisions for growth.</p><a href="#contact">Get help →</a></article>
+</div></section>
 
-<section class="contact section" id="contact">
-  <div class="contact-inner"><p class="eyebrow"><span></span> Contact the firm</p><h2>Discuss your <em>requirement.</em></h2><p>For professional enquiries relating to audit, taxation, GST, accounting or financial matters, get in touch with the firm.</p><a class="button button-dark" href="mailto:info@example.com">Send an enquiry <span>↗</span></a></div>
-  <div class="contact-mark"><img src="https://resource.cdn.icai.org/77835prc62484.png" alt="CA India logo"></div>
-</section>
+<section id="documents" class="documents"><div class="doc-image"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1000&q=85" alt="Financial documents and calculator"></div><div class="doc-copy"><span class="eyebrow">03 / DOCUMENT CHECKLIST</span><h2>Know what to keep ready.</h2><p>Select a service and get a simple preparation list before speaking to the CA.</p><div class="select-row"><select id="doc-service"><option value="gst">GST Registration</option><option value="itr">Income Tax Return</option><option value="business">Business Setup</option><option value="audit">Tax Audit</option></select><button class="btn primary" id="checklist-btn">Show checklist</button></div><ul id="checklist"></ul></div></section>
+
+<section class="calendar"><div><span class="eyebrow">04 / COMPLIANCE CALENDAR</span><h2>Never let a deadline<br>become a surprise.</h2><p>A demo compliance timeline that can later be managed entirely from the CA admin portal.</p></div><div class="deadline"><div><span>OCT</span><strong>07</strong></div><section><b>TDS payment</b><small>For the previous month</small></section><em>Upcoming</em></div><div class="deadline"><div><span>OCT</span><strong>11</strong></div><section><b>GSTR-1</b><small>Monthly filer timeline</small></section><em>Upcoming</em></div></section>
+
+<section class="ask"><div><span class="eyebrow">05 / ASK A CA</span><h2>Have a question?<br>Send it to the desk.</h2><p>No complicated form. Just tell the CA what you need to know.</p></div><form id="question-form"><input name="name" placeholder="Your name" required><input name="phone" placeholder="Phone number" required><textarea name="question" placeholder="What do you want to ask?" required></textarea><button class="btn light" type="submit">Send question →</button><small id="question-msg"></small></form></section>
+
+<section class="about"><div class="about-photo"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=85" alt="Business advisory meeting"></div><div><span class="eyebrow">06 / THE FIRM</span><h2>Professional advice should feel human.</h2><p>This demo is designed for a real CA firm: the firm can replace this content, add its own team, credentials, services and proof from the admin portal.</p><div class="proof"><b>500+<small>Clients assisted</small></b><b>10+<small>Years experience</small></b><b>98%<small>Client satisfaction</small></b></div></div></section>
+
+<section id="contact" class="contact"><div><span class="eyebrow">07 / START A CONVERSATION</span><h2>Let's solve the problem,<br>not just file the form.</h2><p>Send your requirement and the CA team can follow up from the admin lead desk.</p><div class="contact-links"><a href="tel:+919999999999">☎ +91 99999 99999</a><a href="mailto:hello@cad​​esk.example">✉ hello@cadesk.example</a><a href="https://wa.me/919999999999">◉ WhatsApp us</a></div></div>
+<form id="lead-form"><div class="two"><input name="name" placeholder="Full name" required><input name="phone" placeholder="Phone number" required></div><input name="email" type="email" placeholder="Email address"><select name="service"><option>Income Tax</option><option>GST</option><option>Audit & Assurance</option><option>Business Compliance</option><option>Accounting</option><option>Other</option></select><textarea name="message" placeholder="Tell us briefly what you need" required></textarea><button class="btn primary" type="submit">Request consultation →</button><small id="lead-msg"></small></form></section>
 </main>
-
-<footer><div class="footer-brand"><span class="footer-ca">CA</span><div><strong>Sandip Dasgupta &amp; Co.</strong><small>Chartered Accountants</small></div></div><p>Professional services in audit, taxation, GST, accounting and finance.</p><div class="footer-bottom"><span>© <span id="year"></span> Sandip Dasgupta &amp; Co.</span><span>Professional practice</span></div></footer>
+<footer><div class="brand"><span class="brandmark">CA</span><span>CA <b>Desk</b><small>Demo practice website</small></span></div><p>© 2026 CA Desk Demo · Built as a reusable CA practice platform.</p><a href="admin.html">Admin Portal ↗</a></footer>
 <script src="script.js"></script>
-</body>
-</html>
+</body></html>

@@ -371,6 +371,8 @@ document.getElementById("upload-send")?.addEventListener("click",()=>{
   if(!trigger||!menu)return;
   const names={editorial:"Editorial Luxe",modern:"Modern Tech",corporate:"Corporate Blue",mono:"Minimal Mono",bold:"Bold Finance"};
   const saved=localStorage.getItem("caDesk_theme")||"editorial";
+  const hint=document.getElementById("theme-hint");
+  if(hint && localStorage.getItem("caDesk_theme_hint_seen")==="1") hint.classList.add("hidden");
   function applyTheme(theme){
     const safe=names[theme]?theme:"editorial";
     root.dataset.theme=safe;
@@ -379,6 +381,7 @@ document.getElementById("upload-send")?.addEventListener("click",()=>{
   }
   applyTheme(saved);
   trigger.addEventListener("click",e=>{e.stopPropagation();const open=menu.classList.toggle("open");trigger.setAttribute("aria-expanded",String(open));menu.setAttribute("aria-hidden",String(!open));});
-  options.forEach(o=>o.addEventListener("click",()=>{applyTheme(o.dataset.themeChoice);menu.classList.remove("open");trigger.setAttribute("aria-expanded","false");menu.setAttribute("aria-hidden","true");}));
+  options.forEach(o=>o.addEventListener("click",()=>{applyTheme(o.dataset.themeChoice);menu.classList.remove("open");trigger.setAttribute("aria-expanded","false");menu.setAttribute("aria-hidden","true");if(hint){hint.classList.add("hidden");localStorage.setItem("caDesk_theme_hint_seen","1");}}));
+  trigger.addEventListener("click",()=>{if(hint){hint.classList.add("hidden");localStorage.setItem("caDesk_theme_hint_seen","1");}});
   document.addEventListener("click",e=>{if(!e.target.closest("#theme-switcher")){menu.classList.remove("open");trigger.setAttribute("aria-expanded","false");menu.setAttribute("aria-hidden","true");}});
 })();

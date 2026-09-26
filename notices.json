@@ -1,72 +1,242 @@
 [
   {
-    "id": "it-121-2026",
+    "id": "income-tax-0",
     "type": "income-tax",
     "source": "Income Tax Department",
-    "date": "24 Sep 2026",
-    "title": "CBDT Notification No. 121/2026 — TDS reporting requirements for non-resident property transactions; revised Forms 132 & 141",
-    "summary": "Recent official Income Tax Department notification.",
-    "url": "https://www.incometax.gov.in/iec/foportal/latest-news",
-    "pdf_url": ""
+    "date": "26 Sep 2026",
+    "title": "Guidance to file Tax Return",
+    "summary": "Official public departmental update.",
+    "url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/tax-payer/individual/how-to-file-tax-returns",
+    "pdf_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2020-02/vision-mission-values-2020-07012011.pdf"
   },
   {
-    "id": "it-120-2026",
+    "id": "income-tax-1",
     "type": "income-tax",
     "source": "Income Tax Department",
-    "date": "24 Sep 2026",
-    "title": "CBDT Notification No. 120/2026 — Registration deadline extension for Registered Valuers and Authorised Income-tax Practitioners; revised Forms 169 & 171",
-    "summary": "Recent official Income Tax Department notification.",
-    "url": "https://www.incometax.gov.in/iec/foportal/latest-news",
-    "pdf_url": ""
+    "date": "26 Sep 2026",
+    "title": "Deductions on which I can get tax benefit",
+    "summary": "Official public departmental update.",
+    "url": "https://www.incometax.gov.in/iec/foportal/help/individual/return-applicable-1#taxdeductions",
+    "pdf_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2020-02/vision-mission-values-2020-07012011.pdf"
   },
   {
-    "id": "it-3-2026",
+    "id": "income-tax-2",
     "type": "income-tax",
     "source": "Income Tax Department",
-    "date": "21 Sep 2026",
-    "title": "CBDT Notification No. 3 of 2026 — Procedure for registration of reporting person/entity and submission of Form No. 98",
-    "summary": "Recent official Income Tax Department notification.",
-    "url": "https://www.incometax.gov.in/iec/foportal/latest-news",
-    "pdf_url": ""
+    "date": "26 Sep 2026",
+    "title": "Guidance to file Tax Return",
+    "summary": "Official public departmental update.",
+    "url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/tax-payer/individual/business-professional/how-to-file-tax-returns",
+    "pdf_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2020-02/vision-mission-values-2020-07012011.pdf"
   },
   {
-    "id": "it-114-2026",
+    "id": "income-tax-3",
     "type": "income-tax",
     "source": "Income Tax Department",
-    "date": "01 Sep 2026",
-    "title": "CBDT Notification No. 114/2026 — Foreign Assets of Small Taxpayers Disclosure Scheme, 2026",
-    "summary": "Recent official Income Tax Department notification.",
-    "url": "https://www.incometax.gov.in/iec/foportal/latest-news",
-    "pdf_url": ""
+    "date": "26 Sep 2026",
+    "title": "Deductions on which I can get tax benefit",
+    "summary": "Official public departmental update.",
+    "url": "https://www.incometax.gov.in/iec/foportal/help/individual-business-profession#taxdeductions",
+    "pdf_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2020-02/vision-mission-values-2020-07012011.pdf"
   },
   {
-    "id": "gst-01-2026",
+    "id": "income-tax-4",
+    "type": "income-tax",
+    "source": "Income Tax Department",
+    "date": "26 Sep 2026",
+    "title": "Guidance to file Tax Return",
+    "summary": "Official public departmental update.",
+    "url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/tax-payer/individual/senior-and-super-senior-citizens/how-to-file-tax-returns",
+    "pdf_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2020-02/vision-mission-values-2020-07012011.pdf"
+  },
+  {
+    "id": "income-tax-5",
+    "type": "income-tax",
+    "source": "Income Tax Department",
+    "date": "26 Sep 2026",
+    "title": "Deductions on which I can get tax benefit",
+    "summary": "Official public departmental update.",
+    "url": "https://www.incometax.gov.in/iec/foportal/help/individual/return-applicable-2#taxdeductions",
+    "pdf_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2020-02/vision-mission-values-2020-07012011.pdf"
+  },
+  {
+    "id": "income-tax-6",
+    "type": "income-tax",
+    "source": "Income Tax Department",
+    "date": "26 Sep 2026",
+    "title": "Guidance to file Tax Return",
+    "summary": "Official public departmental update.",
+    "url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/tax-payer/individual/non-resident/how-to-file-tax-returns",
+    "pdf_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2020-02/vision-mission-values-2020-07012011.pdf"
+  },
+  {
+    "id": "income-tax-7",
+    "type": "income-tax",
+    "source": "Income Tax Department",
+    "date": "26 Sep 2026",
+    "title": "Deductions on which I can get tax benefit",
+    "summary": "Official public departmental update.",
+    "url": "https://www.incometax.gov.in/iec/foportal/help/individual/return-applicable-0#taxdeductions",
+    "pdf_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2020-02/vision-mission-values-2020-07012011.pdf"
+  },
+  {
+    "id": "income-tax-8",
+    "type": "income-tax",
+    "source": "Income Tax Department",
+    "date": "26 Sep 2026",
+    "title": "Guidance to file Tax Return",
+    "summary": "Official public departmental update.",
+    "url": "https://www.incometax.gov.in/iec/foportal/help/huf/how-to-file-tax-returns",
+    "pdf_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2020-02/vision-mission-values-2020-07012011.pdf"
+  },
+  {
+    "id": "income-tax-9",
+    "type": "income-tax",
+    "source": "Income Tax Department",
+    "date": "26 Sep 2026",
+    "title": "Deductions on which I can get tax benefit",
+    "summary": "Official public departmental update.",
+    "url": "https://www.incometax.gov.in/iec/foportal/help/individual/return-applicable#taxdeductions",
+    "pdf_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2020-02/vision-mission-values-2020-07012011.pdf"
+  },
+  {
+    "id": "income-tax-10",
+    "type": "income-tax",
+    "source": "Income Tax Department",
+    "date": "26 Sep 2026",
+    "title": "Deductions on which I can get tax benefit",
+    "summary": "Official public departmental update.",
+    "url": "https://www.incometax.gov.in/iec/foportal/help/company/return-applicable#taxdeductions",
+    "pdf_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2020-02/vision-mission-values-2020-07012011.pdf"
+  },
+  {
+    "id": "income-tax-11",
+    "type": "income-tax",
+    "source": "Income Tax Department",
+    "date": "26 Sep 2026",
+    "title": "Deductions on which I can get tax benefit",
+    "summary": "Official public departmental update.",
+    "url": "https://www.incometax.gov.in/iec/foportal/help/company/return-applicable-0#taxdeductions",
+    "pdf_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2020-02/vision-mission-values-2020-07012011.pdf"
+  },
+  {
+    "id": "gst-0",
     "type": "gst",
     "source": "CBIC GST",
-    "date": "03 Aug 2026",
-    "title": "Instruction No. 01/2026-GST — Provisional sanction of refund claims based on system risk identification and evaluation",
-    "summary": "Recent GST instruction.",
-    "url": "https://cbic-gst.gov.in/",
+    "date": "26 Sep 2026",
+    "title": "Migration to Existing Tax Payers",
+    "summary": "Official public departmental update.",
+    "url": "https://cbic-gst.gov.in/migration-existing-taxpayers.html",
+    "pdf_url": "https://cbic-gst.gov.in/pdf/cgst-rules-01july2017.pdf"
+  },
+  {
+    "id": "gst-1",
+    "type": "gst",
+    "source": "CBIC GST",
+    "date": "26 Sep 2026",
+    "title": "Communication to Tax Payers",
+    "summary": "Official public departmental update.",
+    "url": "https://cbic-gst.gov.in/communication-taxpayers.html",
+    "pdf_url": "https://cbic-gst.gov.in/pdf/cgst-rules-01july2017.pdf"
+  },
+  {
+    "id": "gst-2",
+    "type": "gst",
+    "source": "CBIC GST",
+    "date": "26 Sep 2026",
+    "title": "CBIC GST Migration Help",
+    "summary": "Official public departmental update.",
+    "url": "https://cbic-gst.gov.in/migration-help.html",
+    "pdf_url": "https://cbic-gst.gov.in/pdf/consti-amend-bill-115-2011-new.pdf"
+  },
+  {
+    "id": "gst-3",
+    "type": "gst",
+    "source": "CBIC GST",
+    "date": "26 Sep 2026",
+    "title": "GST migration(English)",
+    "summary": "Official public departmental update.",
+    "url": "https://cbic-gst.gov.in/pdf/public-notice-st-gst-last-date-eng.pdf",
+    "pdf_url": "https://cbic-gst.gov.in/pdf/public-notice-st-gst-last-date-eng.pdf"
+  },
+  {
+    "id": "gst-4",
+    "type": "gst",
+    "source": "CBIC GST",
+    "date": "26 Sep 2026",
+    "title": "GST migration(Hindi)",
+    "summary": "Official public departmental update.",
+    "url": "https://cbic-gst.gov.in/pdf/public-notice-st-gst-last-date-hindi.pdf",
+    "pdf_url": "https://cbic-gst.gov.in/pdf/public-notice-st-gst-last-date-hindi.pdf"
+  },
+  {
+    "id": "gst-5",
+    "type": "gst",
+    "source": "CBIC GST",
+    "date": "26 Sep 2026",
+    "title": "Functions of DG GST",
+    "summary": "Official public departmental update.",
+    "url": "https://cbic-gst.gov.in/functions-dggst.html",
     "pdf_url": ""
   },
   {
-    "id": "gst-din-2025",
+    "id": "gst-6",
     "type": "gst",
     "source": "CBIC GST",
-    "date": "09 Jun 2025",
-    "title": "Circular No. 249/06/2025-GST — Generation and quoting of Document Identification Number (DIN)",
-    "summary": "Official CBIC GST circular.",
-    "url": "https://cbic-gst.gov.in/pdf/Circular-No-249-2025.pdf",
-    "pdf_url": "https://cbic-gst.gov.in/pdf/Circular-No-249-2025.pdf"
+    "date": "26 Sep 2026",
+    "title": "Advisories for ACES (CE&ST) Tax Payers",
+    "summary": "Official public departmental update.",
+    "url": "https://cbic-gst.gov.in/advisories-aces-tax-payers.html",
+    "pdf_url": "https://cbic-gst.gov.in/pdf/cgst-rules-01july2017.pdf"
   },
   {
-    "id": "gst-reg-2025",
+    "id": "gst-7",
     "type": "gst",
     "source": "CBIC GST",
-    "date": "17 Apr 2025",
-    "title": "Instruction No. 03/2025-GST — Instructions for processing applications for GST registration",
-    "summary": "Official CBIC GST instruction.",
-    "url": "https://cbic-gst.gov.in/pdf/ins-gst-no-03-2025.pdf",
-    "pdf_url": "https://cbic-gst.gov.in/pdf/ins-gst-no-03-2025.pdf"
+    "date": "26 Sep 2026",
+    "title": "FAQs and User Manual on new GST Registration",
+    "summary": "Official public departmental update.",
+    "url": "https://cbic-gst.gov.in/faqs-user-manual-new-gst-registration.html",
+    "pdf_url": "https://cbic-gst.gov.in/pdf/IGST-Act-Updated.pdf"
+  },
+  {
+    "id": "gst-8",
+    "type": "gst",
+    "source": "CBIC GST",
+    "date": "26 Sep 2026",
+    "title": "FAQs relating to GST Migration/Registration",
+    "summary": "Official public departmental update.",
+    "url": "https://cbic-gst.gov.in/advt-faq-relating-gst-migration-registration.html",
+    "pdf_url": "https://cbic-gst.gov.in/pdf/cgst-rules-01july2017.pdf"
+  },
+  {
+    "id": "gst-9",
+    "type": "gst",
+    "source": "CBIC GST",
+    "date": "26 Sep 2026",
+    "title": "Input Tax Credit (English)",
+    "summary": "Official public departmental update.",
+    "url": "https://cbic-gst.gov.in/advt-input-tax-credit-english.html",
+    "pdf_url": "https://cbic-gst.gov.in/pdf/cgst-rules-01july2017.pdf"
+  },
+  {
+    "id": "gst-10",
+    "type": "gst",
+    "source": "CBIC GST",
+    "date": "26 Sep 2026",
+    "title": "Input Tax Credit (Hindi)",
+    "summary": "Official public departmental update.",
+    "url": "https://cbic-gst.gov.in/advt-input-tax-credit.html",
+    "pdf_url": "https://cbic-gst.gov.in/pdf/cgst-rules-01july2017.pdf"
+  },
+  {
+    "id": "gst-11",
+    "type": "gst",
+    "source": "CBIC GST",
+    "date": "26 Sep 2026",
+    "title": "Communication to Taxpayers",
+    "summary": "Official public departmental update.",
+    "url": "https://cbic-gst.gov.in/communication-tax-payers.html",
+    "pdf_url": "https://cbic-gst.gov.in/pdf/IGST-Act-Updated.pdf"
   }
 ]

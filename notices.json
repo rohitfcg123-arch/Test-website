@@ -1,0 +1,32 @@
+[
+  {
+    "id": "it-initial-1",
+    "type": "income-tax",
+    "source": "Income Tax Department",
+    "date": "21 Sep 2026",
+    "title": "CBDT Notification No. 3 of 2026 — Procedure for registration of reporting person/entity and submission of Form No. 98",
+    "summary": "Official Income Tax Department latest update.",
+    "url": "https://www.incometax.gov.in/iec/foportal/",
+    "pdf_url": "https://www.incometax.gov.in/iec/foportal/"
+  },
+  {
+    "id": "it-initial-2",
+    "type": "income-tax",
+    "source": "Income Tax Department",
+    "date": "01 Sep 2026",
+    "title": "CBDT Notification No. 114/2026 — Foreign Assets of Small Taxpayers Disclosure Scheme, 2026",
+    "summary": "Official Income Tax Department notification update.",
+    "url": "https://www.incometax.gov.in/iec/foportal/",
+    "pdf_url": "https://www.incometax.gov.in/iec/foportal/"
+  },
+  {
+    "id": "gst-initial-1",
+    "type": "gst",
+    "source": "CBIC GST",
+    "date": "Latest",
+    "title": "CBIC GST — Notifications, circulars and clarifications",
+    "summary": "Official CBIC GST public update source.",
+    "url": "https://cbic-gst.gov.in/",
+    "pdf_url": "https://cbic-gst.gov.in/"
+  }
+]

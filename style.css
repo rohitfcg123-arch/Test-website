@@ -53,3 +53,36 @@ body[data-theme="bold"]{--ink:#141414;--muted:#666;--cream:#f3f1ed;--paper:#fff;
  .theme-trigger span{display:inline;font-size:10px}
  .theme-switcher{margin-right:7px}
 }
+
+/* ===== FINAL compact map + independent mobile controls ===== */
+.location-grid{grid-template-columns:1fr 1fr;align-items:center}
+.location-info{min-height:330px}
+.mini-map-card{position:relative;display:block;height:330px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#e9e7df;box-shadow:0 18px 45px #14251e18;text-decoration:none;color:var(--ink);cursor:pointer}
+.mini-map-card iframe{width:100%;height:100%;border:0;display:block;pointer-events:none;filter:saturate(.82)}
+.mini-map-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,#14251e38 100%);pointer-events:none}
+.mini-map-pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);width:38px;height:38px;border-radius:50% 50% 50% 0;background:#c94f3d;border:4px solid #fff;box-shadow:0 6px 18px #14251e45;display:grid;place-items:center;color:#fff;font-size:8px;rotate:-45deg;z-index:2}
+.mini-map-pin::first-letter{rotate:45deg}
+.mini-map-label{position:absolute;left:16px;bottom:42px;background:#fff;color:#172a20;padding:8px 11px;border-radius:8px;font-size:11px;font-weight:800;z-index:3;box-shadow:0 8px 22px #14251e25}
+.mini-map-open{position:absolute;right:16px;bottom:14px;color:#fff;font-size:10px;font-weight:800;z-index:3}
+.mini-map-card:hover{transform:translateY(-2px);box-shadow:0 22px 55px #14251e22}
+.nav{position:relative;z-index:200}
+.menu{position:relative;z-index:220}
+.theme-switcher{z-index:230}
+.theme-menu{z-index:240}
+.mobile-nav{z-index:210}
+@media(max-width:900px){
+ .location-grid{grid-template-columns:1fr}
+ .mini-map-card{height:280px}
+ .nav{display:flex;align-items:center}
+ .theme-switcher{margin-left:auto;margin-right:8px;flex:0 0 auto}
+ .menu{flex:0 0 42px;width:42px;height:38px;padding:0;display:grid;place-items:center;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:9px;font-size:20px;line-height:1}
+ .theme-trigger{width:auto;min-width:76px;height:38px;padding:7px 10px}
+ .theme-menu{top:46px;right:-4px;width:280px}
+ .mobile-nav{top:58px;left:10px;right:10px}
+}
+@media(max-width:600px){
+ .mini-map-card{height:250px}
+ .location-info{min-height:0}
+ .theme-menu{right:-8px;width:min(280px,calc(100vw - 28px))}
+ .mobile-nav{top:58px}
+}

@@ -6,7 +6,7 @@ document.getElementById("lead-form").addEventListener("submit",e=>{e.preventDefa
 document.getElementById("question-form").addEventListener("submit",e=>{e.preventDefault();const f=new FormData(e.target),data=Object.fromEntries(f.entries());demoSave("questions",data,document.getElementById("question-msg"));e.target.reset()});
 
 const menuBtn=document.querySelector(".menu");
-if(menuBtn){const mobileNav=document.createElement("div");mobileNav.className="mobile-nav";mobileNav.innerHTML='<a href="#solutions">Solutions</a><a href="#services">Services</a><a href="#documents">Documents</a><a href="#tools">Tools</a><a href="#contact">Contact</a><a href="admin.html">Admin Portal ↗</a>';document.querySelector(".nav").appendChild(mobileNav);menuBtn.addEventListener("click",()=>mobileNav.classList.toggle("open"));mobileNav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mobileNav.classList.remove("open")));}
+if(menuBtn){const mobileNav=document.createElement("div");mobileNav.className="mobile-nav";mobileNav.innerHTML='<a href="#solutions">Solutions</a><a href="#services">Services</a><a href="#documents">Documents</a><a href="#tools">Tools</a><a href="#notices">Updates</a><a href="#contact">Contact</a><a href="admin.html">Admin Portal ↗</a>';document.querySelector(".nav").appendChild(mobileNav);menuBtn.addEventListener("click",()=>mobileNav.classList.toggle("open"));mobileNav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mobileNav.classList.remove("open")));}
 
 const aiFab=document.getElementById("ai-fab"),aiPanel=document.getElementById("ai-panel"),aiClose=document.getElementById("ai-close"),aiMessages=document.getElementById("ai-messages"),aiForm=document.getElementById("ai-form"),aiText=document.getElementById("ai-text");
 function aiAdd(text,type){const d=document.createElement("div");d.className="ai-msg "+type;d.textContent=text;aiMessages.appendChild(d);aiMessages.scrollTop=aiMessages.scrollHeight}
@@ -326,3 +326,40 @@ document.getElementById("upload-send")?.addEventListener("click",()=>{
   document.getElementById("upload-service").value="";
   document.getElementById("upload-purpose").value="";
 });
+
+/* Automatic public department updates */
+(function(){
+  const list=document.getElementById("notice-list"),status=document.getElementById("notice-status");
+  if(!list)return;
+  let allNotices=[],activeFilter="all";
+  const fallback=[
+    {id:"it-fallback-1",type:"income-tax",source:"Income Tax Department",date:"01 Sep 2026",title:"CBDT Notification No. 114/2026 — Foreign Assets of Small Taxpayers Disclosure Scheme, 2026",summary:"Official Income Tax Department update.",url:"https://www.incometax.gov.in/iec/foportal/",pdf_url:"https://www.incometax.gov.in/iec/foportal/"},
+    {id:"gst-fallback-1",type:"gst",source:"CBIC GST",date:"Latest",title:"CBIC GST — Latest notifications, circulars and clarifications",summary:"Official CBIC GST source for departmental updates.",url:"https://cbic-gst.gov.in/",pdf_url:"https://cbic-gst.gov.in/"}
+  ];
+  function esc(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]))}
+  function render(){
+    const rows=allNotices.filter(n=>activeFilter==="all"||n.type===activeFilter);
+    if(!rows.length){list.innerHTML='<div class="notice-empty">No updates found for this category.</div>';return}
+    list.innerHTML=rows.slice(0,20).map(n=>{
+      const target=n.pdf_url||n.url;
+      const label=n.pdf_url?"Open / Download PDF →":"Open official update →";
+      return '<article class="notice-card"><div class="notice-date">'+esc(n.date||"")+'</div><div><span class="notice-source">'+esc(n.source||"")+'</span><h3>'+esc(n.title)+'</h3><p>'+esc(n.summary||"Official departmental update.")+'</p></div><a class="btn primary notice-open" href="'+esc(target)+'" target="_blank" rel="noopener">'+label+'</a></article>';
+    }).join("");
+  }
+  document.querySelectorAll("[data-notice-filter]").forEach(b=>b.addEventListener("click",()=>{
+    document.querySelectorAll(".notice-tab").forEach(x=>x.classList.remove("active"));
+    b.classList.add("active");activeFilter=b.dataset.noticeFilter;render();
+  }));
+  fetch("notices.json?ts="+Date.now(),{cache:"no-store"})
+    .then(r=>r.ok?r.json():Promise.reject(new Error("notices.json unavailable")))
+    .then(data=>{
+      allNotices=Array.isArray(data)?data:fallback;
+      status.textContent="Auto-updated from official public sources";
+      render();
+    })
+    .catch(()=>{
+      allNotices=fallback;
+      status.textContent="Showing official-source fallback";
+      render();
+    });
+})();

@@ -3,9 +3,6 @@ function demoSave(type,data,msg){const key="caDesk_"+type;const old=JSON.parse(l
 document.getElementById("lead-form").addEventListener("submit",e=>{e.preventDefault();const f=new FormData(e.target),data=Object.fromEntries(f.entries());demoSave("leads",data,document.getElementById("lead-msg"));e.target.reset()});
 document.getElementById("question-form").addEventListener("submit",e=>{e.preventDefault();const f=new FormData(e.target),data=Object.fromEntries(f.entries());demoSave("questions",data,document.getElementById("question-msg"));e.target.reset()});
 
-const menuBtn=document.querySelector(".menu");
-if(menuBtn){const mobileNav=document.createElement("div");mobileNav.className="mobile-nav";mobileNav.innerHTML='<a href="#solutions">Solutions</a><a href="#services">Services</a><a href="#tools">Income Tax Calculator</a><a href="#tools">HSN & GST Rate Finder</a><a href="#notices">Income Tax & GST Notices</a><a href="#ask-ca">Ask a CA / Question Form</a><a href="#location">Location / Map</a><a href="#contact">Contact</a><a href="admin.html">Admin Portal ↗</a>';document.querySelector(".nav").appendChild(mobileNav);menuBtn.addEventListener("click",()=>mobileNav.classList.toggle("open"));mobileNav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>mobileNav.classList.remove("open")));}
-
 const aiFab=document.getElementById("ai-fab"),aiPanel=document.getElementById("ai-panel"),aiClose=document.getElementById("ai-close"),aiMessages=document.getElementById("ai-messages"),aiForm=document.getElementById("ai-form"),aiText=document.getElementById("ai-text");
 function aiAdd(text,type){const d=document.createElement("div");d.className="ai-msg "+type;d.textContent=text;aiMessages.appendChild(d);aiMessages.scrollTop=aiMessages.scrollHeight}
 function aiAnswer(q){

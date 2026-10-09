@@ -39,15 +39,11 @@ def anchors(html, base):
     return out
 
 def resolve_pdf(url):
+    # Only label a link as a PDF when the update URL itself is a PDF.
+    # Crawling an article and taking its first PDF can accidentally attach an
+    # unrelated document (for example, a generic department brochure).
     if re.search(r"\.pdf(?:$|[?#])", url, re.I):
         return url
-    try:
-        html=get(url,15)
-        for _, href in anchors(html,url):
-            if re.search(r"\.pdf(?:$|[?#])", href, re.I):
-                return href
-    except Exception:
-        pass
     return None
 
 def extract_date(text):

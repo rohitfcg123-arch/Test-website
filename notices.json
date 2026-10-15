@@ -124,13 +124,33 @@
     "type": "gst",
     "source": "CBIC GST",
     "date": "15 Oct 2026",
+    "title": "Advisories for ACES (CE&ST) Tax Payers",
+    "summary": "Official public departmental update.",
+    "url": "https://cbic-gst.gov.in/advisories-aces-tax-payers.html",
+    "pdf_url": ""
+  },
+  {
+    "id": "gst-1",
+    "type": "gst",
+    "source": "CBIC GST",
+    "date": "15 Oct 2026",
+    "title": "HSNS Act, Rules",
+    "summary": "Official public departmental update.",
+    "url": "https://taxinformation.cbic.gov.in/explore-hsns-cess",
+    "pdf_url": ""
+  },
+  {
+    "id": "gst-2",
+    "type": "gst",
+    "source": "CBIC GST",
+    "date": "15 Oct 2026",
     "title": "Migration to Existing Tax Payers",
     "summary": "Official public departmental update.",
     "url": "https://cbic-gst.gov.in/migration-existing-taxpayers.html",
     "pdf_url": ""
   },
   {
-    "id": "gst-1",
+    "id": "gst-3",
     "type": "gst",
     "source": "CBIC GST",
     "date": "15 Oct 2026",
@@ -140,7 +160,7 @@
     "pdf_url": ""
   },
   {
-    "id": "gst-2",
+    "id": "gst-4",
     "type": "gst",
     "source": "CBIC GST",
     "date": "15 Oct 2026",
@@ -150,7 +170,7 @@
     "pdf_url": ""
   },
   {
-    "id": "gst-3",
+    "id": "gst-5",
     "type": "gst",
     "source": "CBIC GST",
     "date": "15 Oct 2026",
@@ -160,7 +180,7 @@
     "pdf_url": "https://cbic-gst.gov.in/pdf/public-notice-st-gst-last-date-eng.pdf"
   },
   {
-    "id": "gst-4",
+    "id": "gst-6",
     "type": "gst",
     "source": "CBIC GST",
     "date": "15 Oct 2026",
@@ -170,7 +190,7 @@
     "pdf_url": "https://cbic-gst.gov.in/pdf/public-notice-st-gst-last-date-hindi.pdf"
   },
   {
-    "id": "gst-5",
+    "id": "gst-7",
     "type": "gst",
     "source": "CBIC GST",
     "date": "15 Oct 2026",
@@ -180,17 +200,7 @@
     "pdf_url": ""
   },
   {
-    "id": "gst-6",
-    "type": "gst",
-    "source": "CBIC GST",
-    "date": "15 Oct 2026",
-    "title": "Advisories for ACES (CE&ST) Tax Payers",
-    "summary": "Official public departmental update.",
-    "url": "https://cbic-gst.gov.in/advisories-aces-tax-payers.html",
-    "pdf_url": ""
-  },
-  {
-    "id": "gst-7",
+    "id": "gst-8",
     "type": "gst",
     "source": "CBIC GST",
     "date": "15 Oct 2026",
@@ -200,7 +210,7 @@
     "pdf_url": ""
   },
   {
-    "id": "gst-8",
+    "id": "gst-9",
     "type": "gst",
     "source": "CBIC GST",
     "date": "15 Oct 2026",
@@ -210,7 +220,7 @@
     "pdf_url": ""
   },
   {
-    "id": "gst-9",
+    "id": "gst-10",
     "type": "gst",
     "source": "CBIC GST",
     "date": "15 Oct 2026",
@@ -220,23 +230,13 @@
     "pdf_url": ""
   },
   {
-    "id": "gst-10",
+    "id": "gst-11",
     "type": "gst",
     "source": "CBIC GST",
     "date": "15 Oct 2026",
     "title": "Input Tax Credit (Hindi)",
     "summary": "Official public departmental update.",
     "url": "https://cbic-gst.gov.in/advt-input-tax-credit.html",
-    "pdf_url": ""
-  },
-  {
-    "id": "gst-11",
-    "type": "gst",
-    "source": "CBIC GST",
-    "date": "15 Oct 2026",
-    "title": "Communication to Taxpayers",
-    "summary": "Official public departmental update.",
-    "url": "https://cbic-gst.gov.in/communication-tax-payers.html",
     "pdf_url": ""
   }
 ]

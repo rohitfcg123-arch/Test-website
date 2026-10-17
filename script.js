@@ -43,6 +43,7 @@
   const menu=document.getElementById('mobileMenu'), nav=document.querySelector('.desktop-nav');
   menu?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'✕':'☰';});
   nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu?.setAttribute('aria-expanded','false');if(menu)menu.textContent='☰';}));
+  document.querySelectorAll('[data-interest]').forEach(link=>link.addEventListener('click',()=>{const subject='Nexora Software Solutions - '+link.dataset.interest;const body='Hello Nexora team,%0D%0A%0D%0AI am interested in: '+encodeURIComponent(link.dataset.interest)+'%0D%0A%0D%0ABusiness / requirement details:%0D%0A%0D%0AName:%0D%0APhone:%0D%0A';link.href='mailto:rohit.fcg123@gmail.com?subject='+encodeURIComponent(subject)+'&body='+body;}));
   document.getElementById('year').textContent=new Date().getFullYear();
   const revealTargets=document.querySelectorAll('.service-card,.work-card,.process-grid article,.about-copy,.about-visual,.section-intro');
   revealTargets.forEach(el=>el.classList.add('reveal'));

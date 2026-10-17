@@ -106,3 +106,18 @@ footer,.footer{border-color:rgba(255,255,255,.09)}
 :focus-visible{outline:2px solid #b7a8ff;outline-offset:4px}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 @media(max-width:650px){.hero h1{letter-spacing:-.065em}.hero:after{background:linear-gradient(180deg,transparent 65%,var(--bg) 100%)}.solution-card:hover,.service-card:hover,.work-card:hover{transform:none}}
+
+
+/* UPDATE #5 — Fix mobile gradient headline text visibility */
+.gradient-text{
+  display:inline;
+  color:#c9bdff;
+  -webkit-text-fill-color:transparent;
+  background-image:linear-gradient(100deg,#ffffff 2%,#c0b2ff 44%,#8ce5ff 90%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  background-size:180% auto;
+}
+@supports not (-webkit-background-clip:text){
+  .gradient-text{color:#c9bdff;background:none;-webkit-text-fill-color:#c9bdff}
+}

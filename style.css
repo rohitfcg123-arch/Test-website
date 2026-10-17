@@ -121,3 +121,23 @@ footer,.footer{border-color:rgba(255,255,255,.09)}
 @supports not (-webkit-background-clip:text){
   .gradient-text{color:#c9bdff;background:none;-webkit-text-fill-color:#c9bdff}
 }
+
+
+/* UPDATE #6 — Hard fallback: remove gradient-box rendering on mobile */
+.hero h1 .gradient-text{
+  display:inline !important;
+  background:none !important;
+  background-image:none !important;
+  background-clip:border-box !important;
+  -webkit-background-clip:border-box !important;
+  -webkit-text-fill-color:#c7baff !important;
+  color:#c7baff !important;
+  animation:none !important;
+  box-shadow:none !important;
+  border:0 !important;
+  padding:0 !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  width:auto !important;
+  height:auto !important;
+}

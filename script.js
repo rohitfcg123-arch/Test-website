@@ -44,8 +44,24 @@
   menu?.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'✕':'☰';});
   nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu?.setAttribute('aria-expanded','false');if(menu)menu.textContent='☰';}));
   document.querySelectorAll('[data-interest]').forEach(link=>link.addEventListener('click',()=>{const subject='Nexora Software Solutions - '+link.dataset.interest;const body='Hello Nexora team,%0D%0A%0D%0AI am interested in: '+encodeURIComponent(link.dataset.interest)+'%0D%0A%0D%0ABusiness / requirement details:%0D%0A%0D%0AName:%0D%0APhone:%0D%0A';link.href='mailto:rohit.fcg123@gmail.com?subject='+encodeURIComponent(subject)+'&body='+body;}));
+  // Subtle pointer-reactive lighting and restrained card tilt on capable devices.
+  const finePointer=window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if(finePointer && !reduced){
+    document.querySelectorAll('.service-card,.solution-card,.work-card').forEach(card=>{
+      card.addEventListener('pointermove',e=>{
+        const r=card.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+        card.style.setProperty('--mx',x+'px');card.style.setProperty('--my',y+'px');
+        const rx=((y/r.height)-.5)*-2.2,ry=((x/r.width)-.5)*2.2;
+        card.style.transform='perspective(900px) rotateX('+rx+'deg) rotateY('+ry+'deg) translateY(-3px)';
+      });
+      card.addEventListener('pointerleave',()=>{card.style.transform='';card.style.setProperty('--mx','50%');card.style.setProperty('--my','0');});
+    });
+  }
+  const topbar=document.querySelector('.topbar');
+  const updateHeader=()=>topbar?.classList.toggle('scrolled',window.scrollY>24);
+  updateHeader();window.addEventListener('scroll',updateHeader,{passive:true});
   document.getElementById('year').textContent=new Date().getFullYear();
-  const revealTargets=document.querySelectorAll('.service-card,.work-card,.process-grid article,.about-copy,.about-visual,.section-intro');
+  const revealTargets=document.querySelectorAll('.service-card,.solution-card,.work-card,.process-grid article,.about-copy,.about-visual,.section-intro,.solution-bottom-callout');
   revealTargets.forEach(el=>el.classList.add('reveal'));
   if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12});revealTargets.forEach(el=>observer.observe(el));}else revealTargets.forEach(el=>el.classList.add('visible'));
 })();
